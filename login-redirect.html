@@ -1,0 +1,31 @@
+<html>
+	<script>
+		function getParameterByName(name) {
+		    var url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		function scheduleTokenRefresh(token){
+		//todo 
+		}
+
+		var token = getParameterByName('access_token')
+
+		if(token){
+			window.localStorage.setItem('access_token', token);
+			scheduleTokenRefresh(token);
+			window.location = "index.html";
+		}else {
+			alert('no token');
+		}
+
+
+	</script>
+
+
+</html>

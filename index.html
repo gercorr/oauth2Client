@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<p id="token"></p>
+	</body>
+
+	<script>
+		var token = window.localStorage.getItem('access_token');
+		if(token){
+			document.getElementById("token").innerHTML = token;
+		}
+		else{
+			var clientId = 'gersapp';
+			var redirectUri = 'https://gersubuntu.westeurope.cloudapp.azure.com/node/login-redirect.html';
+			document.getElementById("token").innerHTML = '<a href="/uaa/oauth/authorize?response_type=token&client_id='+clientId+'&redirect_uri='+redirectUri+'">login</a>';
+		}
+	</script>
+
+</html>
