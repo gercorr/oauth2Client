@@ -9,16 +9,16 @@ sudo a2enmod proxy && sudo a2enmod proxy_http && sudo a2enmod proxy_ajp && sudo 
 ``
 
 ### Update apache Settings:
-``
+```
 sudo vim /etc/apache2/apache2.conf
 sudo systemctl restart apache2
-``
+```
 
 ## Run oauth2Client:
-``
+```
 npm install
 nodejs app.js
-``
+```
 
 
 ## Example Apache Proxy Settings:
